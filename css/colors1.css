@@ -1,0 +1,247 @@
+/**************************\
+* Author: Nic Patterson
+* Purpose: Styles for a
+*  website about ice cream
+***************************/
+
+
+/**********************************************\
+* List of color codes
+* E77DB9: light pink;
+* FF8A8A: peachy pink variant;
+* FFBF8A: color of an fuckin' ice cream cone!;
+***********************************************/
+
+
+/* body styling */
+
+
+/*body{
+  background-image: url("../img/bg.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: .9;
+}*/
+
+body {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body:after {
+    content: "";
+    background: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
+}
+
+
+/* styling for images so they aren't effin huge */
+
+img {
+    width: 30%;
+    height: 30%;
+}
+
+
+/* styling for h tags */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    background-color: #FF8A8A;
+    width: 70%;
+    float: left;
+    text-align: right;
+    padding: 15px 15px 15px 15px;
+    table-layout: fixed;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: left;
+    background-color: #E77DB9;
+    font-size: 1.5em;
+}
+
+
+/************************************
+* was messing with skew attribute 
+*   trying to make my own shadows
+*************************************
+
+h2:before, h3:before{
+  bottom:2px;
+  color: #000;
+  content: attr(title);
+  right:9px;
+  position:absolute;
+  transform-origin: bottom left;
+  transform: skew(20deg) scale(1,1);
+}
+**************************************/
+
+
+/* style for static footer */
+
+footer {
+    display: table;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    background-color: #E77DB9;
+    margin: 1000px 0 0 0;
+}
+
+
+/* style for paragraph in footer */
+
+p {
+    line-height: 2px;
+    margin: 30px 0 0 0;
+    line-height: inherit;
+}
+
+
+/* make the "header" a peachy pink variant */
+
+#header {
+    background-color: #E77DB9;
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    font-size: 2em;
+    padding: 25px 0 25px 0;
+}
+
+
+/* sidebar-top setup; stupid half circle to represent ice cream */
+
+#sidebar-top {
+    text-align: center;
+    width: 150px;
+    height: 75px;
+    background-color: #E77DB9;
+    margin-left: 53px;
+    border-top-right-radius: 110px;
+    border-top-left-radius: 110px;
+    position: relative;
+    line-height: 80px;
+}
+
+
+/* sidebar relative settings */
+
+#sidebar {
+    width: 250px;
+    text-align: center;
+    position: relative;
+    float: left;
+    margin-bottom: 300px;
+}
+
+
+/* use before to properly render the cone and allow text */
+
+#sidebar:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-top: 200px solid #FFBF8A;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    position: absolute;
+    right: 25%;
+    z-index: -1;
+}
+
+
+/* making right hand side of page;  main content */
+
+#main {
+    width: 70%;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* setting a class to display flex items */
+
+.container {
+    display: flex;
+}
+
+
+/* setting flex values */
+
+.column {
+    flex: 1;
+}
+
+.col-1 {
+    order: 1;
+}
+
+.col-2 {
+    order: 2;
+}
+
+.col-3 {
+    order: 3;
+}
+
+
+/* don't understand flex enough yet, so old school responsive columns */
+
+.col-left,
+.col-right,
+.col-mid {
+    width: 300px;
+}
+
+.col-left {
+    float: left;
+}
+
+.col-mid {
+    float: left;
+}
+
+.col-right {
+    float: left;
+}
+
+
+/* this does the magic of making the columns responsive */
+
+@media screen and(max-width: 900px) {
+    .col-left,
+    .col-right,
+    {
+        width: auto;
+        float: none;
+        margin-bottom: 10px;
+    }
+    .col-mid {
+        width: auto;
+        float: right;
+    }
+
+}
